@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 29.03.17
- * Time: 11:42
- */
+
 class Router
 {
 
@@ -29,37 +24,32 @@ class Router
     {
         $uri = $this->getURI();
 
-
         foreach ($this->routes as $uriPattern => $path) {
-            if  (preg_match("~$uriPattern~", $uri)) {
+            if (preg_match("~$uriPattern~", $uri)) {
 
-                $segments = explode('/', $path);
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+                $segments = explode('/', $internalRoute);
 
-                $controllerName = array_shift($segments).'Controller';
-                $controllerName = ucfirst( $controllerName );
+                $controllerName = array_shift($segments) . 'Controller';
+                $controllerName = ucfirst($controllerName);
 
-                $actionName = 'action'. ucfirst(array_shift($segments));
+                $actionName = 'action' . ucfirst(array_shift($segments));
 
-                $controllerFile = ROOT.'/controllers/'.
-                    $controllerName . '.php';
+                $parameters = $segments;
+
+                $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
 
                 if (file_exists($controllerFile)) {
-                    include_once ($controllerFile);
+                    include_once($controllerFile);
                 }
 
                 //создать объект запустить action
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName();
-                if ($result != null){
+                $result = call_user_func_array([$controllerObject, $actionName], $parameters);
+                if ($result != null) {
                     break;
                 }
-            } else {
-                $controllerName = '404Controller';
-
-                $actionName = 'actionNotFound';
             }
         }
-        echo ("$controllerName/$actionName");
-
     }
 }

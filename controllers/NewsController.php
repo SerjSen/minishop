@@ -8,8 +8,15 @@
  */
 class NewsController
 {
-    public function actionIndex() {
-        echo('index<br>');
+    public function actionIndex()
+    {
+        echo('Все записи');
+        return true;
+    }
+
+    public function actionView($category, $id)
+    {
+        echo('Одна запись '. $id);
         return true;
     }
 }
