@@ -46,7 +46,7 @@ class Router
                 //создать объект запустить action
                 $controllerObject = new $controllerName;
                 $result = call_user_func_array([$controllerObject, $actionName], $parameters);
-                if ($result != null) {
+                if (!$result) {
                     break;
                 }
             }

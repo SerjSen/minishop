@@ -1,22 +1,20 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Admin
- * Date: 29.03.17
- * Time: 12:44
- */
+include_once ROOT . '/models/News.php';
+
 class NewsController
 {
     public function actionIndex()
     {
-        echo('Все записи');
-        return true;
+        $news[] = News::getAll();
+        debug($news);
     }
 
-    public function actionView($category, $id)
+    public function actionView($id)
     {
-        echo('Одна запись '. $id);
-        return true;
+        if ($id) {
+            $one = News::getById($id);
+        }
+        debug($one);
     }
 }
