@@ -24,4 +24,5 @@ class Category
         }
         return $categories;
     }
+
 }
