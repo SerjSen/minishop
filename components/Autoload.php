@@ -10,9 +10,9 @@ function autoload($class_name)
 {
 
     $array_paths = array(
-        '/model/',
+        '/models/',
         '/components/',
-        '/controller/'
+        '/controllers/'
     );
 
     foreach ($array_paths as $path) {

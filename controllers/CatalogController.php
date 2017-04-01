@@ -6,7 +6,6 @@
  * Date: 31.03.17
  * Time: 14:39
  */
-include_once ROOT. '/components/Pagination.php';
 class CatalogController
 {
     public function actionIndex()

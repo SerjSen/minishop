@@ -12,6 +12,11 @@ body {
   position: relative;
   font-weight:400;
 }
+.login-form form input, .signup-form form input.btn {
+  background:#FE980F;
+  color: #fff;
+  font-weight:800;
+}
 .category-products .panel-default .panel-heading .panel-title a.active {
   color:#FE980F ;
 }
