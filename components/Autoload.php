@@ -6,7 +6,8 @@
  * Time: 11:11
  */
 
-function autoload($class_name){
+function autoload($class_name)
+{
 
     $array_paths = array(
         '/model/',
@@ -15,11 +16,12 @@ function autoload($class_name){
     );
 
     foreach ($array_paths as $path) {
-        $path = ROOT . $path . $class_name. '.php';
-        if (is_file($path)){
+        $path = ROOT . $path . $class_name . '.php';
+        if (is_file($path)) {
             include_once $path;
         }
 
     }
 }
-spl_autoload_register("autoload",true,true);
+
+spl_autoload_register("autoload", true, true);
