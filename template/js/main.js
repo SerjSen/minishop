@@ -1,5 +1,6 @@
 /*price range*/
-
+var eqElement = ".product-image-wrapper"
+$(window).load(function(){equalheight(eqElement);}).resize(function(){equalheight(eqElement);});
  $('#sl2').slider();
 
 	var RGBChange = function() {

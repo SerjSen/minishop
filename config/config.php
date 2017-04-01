@@ -2,7 +2,7 @@
 
 return [
   'host' => 'localhost',
-  'dbname' => 'phpshop',
+  'dbname' => 'my_shop',
   'user' => 'root',
   'password' => '12345',
 

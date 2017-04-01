@@ -120,24 +120,18 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="../../index.php" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                            <li><a href="/" class="active">Главная</a></li>
+                            <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="../../index.php">Products</a></li>
-                                    <li><a href="../../index.php">Product Details</a></li>
-                                    <li><a href="../../index.php">Checkout</a></li>
-                                    <li><a href="../../index.php">Cart</a></li>
-                                    <li><a href="../../index.php">Login</a></li>
+                                    <li><a href="/catalog/">Каталог</a></li>
+                                    <li><a href="/cart/">Корзина</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                    <li><a href="../../index.php">Blog List</a></li>
-                                    <li><a href="../../index.php">Blog Single</a></li>
-                                </ul>
+                            <li class="dropdown"><a href="/blog/">Блог</a>
+
                             </li>
-                            <li><a href="../../index.php">404</a></li>
-                            <li><a href="../../index.php">Contact</a></li>
+                            <li><a href="/info/">Информация</a></li>
+
                         </ul>
                     </div>
                 </div>

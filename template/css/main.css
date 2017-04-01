@@ -10,9 +10,11 @@ body {
   font-family: 'Roboto', sans-serif;
   background:;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
-
+.category-products .panel-default .panel-heading .panel-title a.active {
+  color:#FE980F ;
+}
 ul li {
   list-style: none;
 }
