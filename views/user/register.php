@@ -12,7 +12,7 @@
                         <?= ' Вы зарегистрированы!'?>
                     </div>
                     <?php endif;?>
-                        <?php if (isset($errors) && is_array($errors)){ ?>
+                        <?php if (isset($errors) && is_array($errors)): ?>
                             <div class="alert alert-danger alert-dismissable fade in">
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
@@ -21,7 +21,7 @@
                                 <?php endforeach; ?>
                             </div>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                         <div class="signup-form"><!--sign up form-->
                             <h2>Регистрация на сайте</h2>

@@ -7,8 +7,9 @@ error_reporting(E_ALL);
 //подключение компонента роутер
 define('ROOT', dirname(__FILE__));
 require_once(ROOT.'/components/Autoload.php');
+require_once(ROOT.'/functions.php');
+session_start();
 
-require_once(ROOT.'/function.php');
 
 //запуск роутера
 $router = new Router();

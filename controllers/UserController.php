@@ -37,12 +37,14 @@ class UserController
 
             if ($errors == false) {
                 $result = User::register($name, $email, $password);
+
             }
 
         }
 
 
         require_once(ROOT . '/views/user/register.php');
+
 
         return true;
     }
@@ -74,9 +76,8 @@ class UserController
                 $errors[] = 'Неправильные данные для входа на сайт';
             } else{
                 User::auth($userID);
-
                 //перенаправляем в личный кабинет;
-                header("Location:/cabinet/");
+                header("Location:/cabinet");
             }
         }
 
@@ -87,7 +88,7 @@ class UserController
     }
 
     public function actionLogout(){
-        session_start();
+
         unset($_SESSION['user']);
         header("Location:/");
     }
