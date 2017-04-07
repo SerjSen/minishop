@@ -12,12 +12,13 @@ class CartController {
 
         //возвращаем пользователя на страницу с кот. пришёл
         $referer = $_SERVER['HTTP_REFERER'];
-        header("Location: $referer");
+       /* header("Location: $referer");*/
     }
 
     public function actionAddAjax($id){
         echo Cart::addProduct($id);
-        return true;
+        return false;
+
     }
 
     public function actionIndex(){
@@ -43,9 +44,8 @@ class CartController {
     public function actionCheckout()
     {
 
-        // Список категорий для левого меню
         $categories = array();
-        $categories = Category::getCategoriesList();
+        $categories = Category::getCategories();
 
 
         // Статус успешного оформления заказа

@@ -8,6 +8,8 @@ class SiteController
         $categories = Category::getCategories();
         $latestProducts = [];
         $latestProducts = Product::getLatestProducts(6);
+
+        $recomendedProducts = Product::getRecomended();
         require_once(ROOT.'/views/site/index.php');
 
 

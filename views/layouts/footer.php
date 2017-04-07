@@ -167,11 +167,25 @@
 
 
 <script src="../../template/js/jquery.js"></script>
-<script src="../../template/js/jquery.equalheight.js"></script>
-<script src="../../template/js/bootstrap.min.js"></script>
+<!--<script src="../../template/js/jquery.equalheight.js"></script>
+--><script src="../../template/js/bootstrap.min.js"></script>
 <script src="../../template/js/jquery.scrollUp.min.js"></script>
 <script src="../../template/js/price-range.js"></script>
 <script src="../../template/js/jquery.prettyPhoto.js"></script>
 <script src="../../template/js/main.js"></script>
+<script type="text/javascript" src="template/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="template/js/jquery.easing.1.1.1.js"></script>
+<script type="text/javascript" src="template/js/common.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.add-to-cart').click(function(){
+            var id = $(this).attr("data-id");
+            $.post("/cart/addAjax/" + id, {}, function(data){
+                $('#cart-count').html('('+data+')');
+            });
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
