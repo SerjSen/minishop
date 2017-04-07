@@ -6,22 +6,26 @@
  * Date: 31.05.16
  * Time: 8:50
  */
-class CartController {
-    public function actionAdd($id){
+class CartController
+{
+    public function actionAdd($id)
+    {
         Cart::addProduct($id);
 
         //возвращаем пользователя на страницу с кот. пришёл
         $referer = $_SERVER['HTTP_REFERER'];
-       /* header("Location: $referer");*/
+        header("Location: $referer");
     }
 
-    public function actionAddAjax($id){
+    public function actionAddAjax($id)
+    {
         echo Cart::addProduct($id);
-        return false;
+        return true;
 
     }
 
-    public function actionIndex(){
+    public function actionIndex()
+    {
         $categories = array();
         $categories = Category::getCategories();
 
@@ -29,14 +33,14 @@ class CartController {
 
         $productsInCart = Cart::getProducts();
 
-        if($productsInCart){
+        if ($productsInCart) {
             $productsIds = array_keys($productsInCart);
-            $products  = Product::getProductsByIds($productsIds);
+            $products = Product::getProductsByIds($productsIds);
 
             $totalPrice = Cart::getTotalPrice($products);
         }
 
-        require_once (ROOT.'/views/cart/index.php');
+        require_once(ROOT . '/views/cart/index.php');
 
         return true;
     }
@@ -62,10 +66,12 @@ class CartController {
 
             // Валидация полей
             $errors = false;
-            if (!User::checkName($userName))
+            if (!User::checkName($userName)) {
                 $errors[] = 'Неправильное имя';
-            if (!User::checkPhone($userPhone))
+            }
+            if (!User::checkPhone($userPhone)) {
                 $errors[] = 'Неправильный телефон';
+            }
 
             // Форма заполнена корректно?
             if ($errors == false) {
@@ -144,7 +150,8 @@ class CartController {
         return true;
     }
 
-    public function actionDelete($id){
+    public function actionDelete($id)
+    {
 
         Cart::deleteProduct($id);
 

@@ -6,32 +6,33 @@
 
                 <div class="col-sm-4 col-sm-offset-4 padding-right">
 
-                    <?php if ($result):?>
-                    <div class="alert alert-success alert-dismissable fade in">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <?= ' Вы зарегистрированы!'?>
-                    </div>
-                    <?php endif;?>
-                        <?php if (isset($errors) && is_array($errors)): ?>
-                            <div class="alert alert-danger alert-dismissable fade in">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <?php if ($result): ?>
+                        <div class="alert alert-success alert-dismissable fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?= ' Вы зарегистрированы!' ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (isset($errors) && is_array($errors)): ?>
+                        <div class="alert alert-danger alert-dismissable fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 
-                                <?php foreach ($errors as $error): ?>
-                                     <?php echo $error; ?><br>
-                                <?php endforeach; ?>
-                            </div>
+                            <?php foreach ($errors as $error): ?>
+                                <?php echo $error; ?><br>
+                            <?php endforeach; ?>
+                        </div>
 
-                        <?php endif; ?>
+                    <?php endif; ?>
 
-                        <div class="signup-form"><!--sign up form-->
-                            <h2>Регистрация на сайте</h2>
-                            <form action="#" method="post">
-                                <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
-                                <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/>
-                                <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
-                                <input type="submit" name="submit" class="btn btn-default" value="Регистрация" />
-                            </form>
-                        </div><!--/sign up form-->
+                    <div class="signup-form"><!--sign up form-->
+                        <h2>Регистрация на сайте</h2>
+                        <form action="#" method="post">
+                            <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
+                            <input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>"/>
+                            <input type="password" name="password" placeholder="Пароль"
+                                   value="<?php echo $password; ?>"/>
+                            <input type="submit" name="submit" class="btn btn-default" value="Регистрация"/>
+                        </form>
+                    </div><!--/sign up form-->
 
                     <br/>
                     <br/>

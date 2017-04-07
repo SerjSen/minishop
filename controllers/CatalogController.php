@@ -20,7 +20,7 @@ class CatalogController
         return true;
     }
 
-    public function actionCategory($categoryId, $page=1)
+    public function actionCategory($categoryId, $page = 1)
     {
         $categories = [];
         $categories = Category::getCategories();

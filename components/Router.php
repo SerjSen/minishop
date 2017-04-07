@@ -7,7 +7,7 @@ class Router
 
     public function __construct()
     {
-        $routersPath = ROOT.'/config/routes.php';
+        $routersPath = ROOT . '/config/routes.php';
         $this->routes = include($routersPath);
     }
 
@@ -15,11 +15,13 @@ class Router
      * Returns request string
      * $return string
      */
-    private function getURI() {
+    private function getURI()
+    {
         if (!empty($_SERVER['REQUEST_URI'])) {
             return $uri = trim($_SERVER['REQUEST_URI'], '/');
         }
     }
+
     public function run()
     {
         $uri = $this->getURI();
@@ -37,6 +39,7 @@ class Router
 
                 $parameters = $segments;
 
+
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
 
                 if (file_exists($controllerFile)) {
@@ -45,8 +48,11 @@ class Router
 
                 //создать объект запустить action
                 $controllerObject = new $controllerName;
+
+
                 $result = call_user_func_array([$controllerObject, $actionName], $parameters);
-                if (!$result) {
+
+                if (null !=$result) {
                     break;
                 }
             }

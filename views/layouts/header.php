@@ -4,12 +4,12 @@
  * User: Admin
  * Date: 31.03.17
  * Time: 12:11
- */?>
+ */ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewsport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
@@ -25,9 +25,12 @@
     <script src="template/js/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="template/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="template/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="template/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="template/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+          href="template/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+          href="template/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+          href="template/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="template/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
@@ -93,7 +96,8 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/cart/"><i class="fa fa-shopping-cart"></i> Корзина <span id = "cart-count">(<?= Cart::countItems(); ?>)</span></a></li>
+                            <li><a href="/cart/"><i class="fa fa-shopping-cart"></i> Корзина <span
+                                            id="cart-count">(<?= Cart::countItems(); ?>)</span></a></li>
                             <?php if (User::is_guest()) { ?>
                                 <li><a href="/user/login/"><i class="fa fa-lock"></i> Вход</a></li>
                             <?php } else { ?>
@@ -126,7 +130,7 @@
                             <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="/catalog/">Каталог</a></li>
-                                    <li><a href="/cart/">Корзина  </a></li>
+                                    <li><a href="/cart/">Корзина </a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="/blog/">Блог</a>

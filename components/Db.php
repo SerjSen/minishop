@@ -12,9 +12,13 @@ class Db
     {
         $paramsPath = ROOT . '/config/config.php';
         $params = include($paramsPath);
+        $opt = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
 
         $dsn = "mysql:host={$params['host']};dbname={$params['dbname']};charset=UTF8";
-        $db = new PDO($dsn, $params['user'], $params['password']);
+        $db = new PDO($dsn, $params['user'], $params['password'], $opt);
         return $db;
     }
 }

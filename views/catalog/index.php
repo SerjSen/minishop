@@ -1,7 +1,6 @@
 <?php include(ROOT . '/views/layouts/header.php') ?>
 
 
-
 <section>
     <div class="container">
         <div class="row">
@@ -35,17 +34,24 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/template/<?= $product['image']?>" alt=""/>
-                                        <h2><?= $product['price']?></h2>
-                                        <p> <a href="/product/<?= $product['id']?> "><?= $product['name']?></a></p>
-                                        <a href="#" data-id="<?= $product['id'];?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                                        <?php if (isset($product['image'])): ?>
+                                            <img src="/template/<?php echo $product['image']; ?>" alt=""/>
+                                        <?php else: ?>
+                                            <img src="<?php echo Product::getImage($product['id']); ?>"/>
+
+                                        <?php endif ?>
+                                        <h2><?= $product['price'] ?></h2>
+                                        <p><a href="/product/<?= $product['id'] ?> "><?= $product['name'] ?></a></p>
+                                        <a href="#" data-id="<?= $product['id']; ?>"
+                                           class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В
+                                            корзину</a>
                                     </div>
 
                                 </div>
 
                             </div>
                         </div>
-                    <?php endforeach;?>
+                    <?php endforeach; ?>
 
 
                 </div><!--features_items-->

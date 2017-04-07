@@ -16,7 +16,6 @@ class UserController
             $password = $_POST['password'];
 
 
-
             $errors = false;
 
             if (!User::checkName($name)) {
@@ -48,7 +47,9 @@ class UserController
 
         return true;
     }
-    public function actionLogin(){
+
+    public function actionLogin()
+    {
         $email = '';
         $password = '';
 
@@ -68,13 +69,13 @@ class UserController
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
-           //проверяем существует ли пользователь
+            //проверяем существует ли пользователь
             $userID = User::checkUserData($email, $password);
 
-            if ($userID == false){
+            if ($userID == false) {
                 //если данные не правильные - ошибка
                 $errors[] = 'Неправильные данные для входа на сайт';
-            } else{
+            } else {
                 User::auth($userID);
                 //перенаправляем в личный кабинет;
                 header("Location:/cabinet");
@@ -87,7 +88,8 @@ class UserController
         return true;
     }
 
-    public function actionLogout(){
+    public function actionLogout()
+    {
 
         unset($_SESSION['user']);
         header("Location:/");

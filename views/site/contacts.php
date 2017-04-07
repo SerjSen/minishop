@@ -23,11 +23,13 @@
                             <br/>
                             <form action="#" method="post">
                                 <p>Ваша почта</p>
-                                <input type="email" name="userEmail" placeholder="E-mail" value="<?php echo $userEmail; ?>"/>
+                                <input type="email" name="userEmail" placeholder="E-mail"
+                                       value="<?php echo $userEmail; ?>"/>
                                 <p>Сообщение</p>
-                                <input type="textarea" name="userText" placeholder="Сообщение" value="<?php echo $userText; ?>"/>
+                                <input type="textarea" name="userText" placeholder="Сообщение"
+                                       value="<?php echo $userText; ?>"/>
                                 <br/>
-                                <input type="submit" name="submit" class="btn btn-default" value="Отправить" />
+                                <input type="submit" name="submit" class="btn btn-default" value="Отправить"/>
                             </form>
                         </div><!--/sign up form-->
                     <?php endif; ?>

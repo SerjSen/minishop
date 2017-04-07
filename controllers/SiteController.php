@@ -10,18 +10,20 @@ class SiteController
         $latestProducts = Product::getLatestProducts(6);
 
         $recomendedProducts = Product::getRecomended();
-        require_once(ROOT.'/views/site/index.php');
+        require_once(ROOT . '/views/site/index.php');
 
 
         return true;
     }
-    public function actionContact() {
+
+    public function actionContact()
+    {
 
         $userEmail = '';
         $userText = '';
         $result = false;
 
-        if (isset($_POST['submit'] )) {
+        if (isset($_POST['submit'])) {
             $userEmail = $_POST['email'];
             $userText = $_POST['text'];
 

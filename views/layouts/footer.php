@@ -4,7 +4,7 @@
  * User: Admin
  * Date: 31.03.17
  * Time: 12:11
- */?>
+ */ ?>
 <footer id="footer"><!--Footer-->
     <div class="footer-top">
         <div class="container">
@@ -168,7 +168,8 @@
 
 <script src="../../template/js/jquery.js"></script>
 <!--<script src="../../template/js/jquery.equalheight.js"></script>
---><script src="../../template/js/bootstrap.min.js"></script>
+-->
+<script src="../../template/js/bootstrap.min.js"></script>
 <script src="../../template/js/jquery.scrollUp.min.js"></script>
 <script src="../../template/js/price-range.js"></script>
 <script src="../../template/js/jquery.prettyPhoto.js"></script>
@@ -177,11 +178,11 @@
 <script type="text/javascript" src="template/js/jquery.easing.1.1.1.js"></script>
 <script type="text/javascript" src="template/js/common.js"></script>
 <script>
-    $(document).ready(function(){
-        $('.add-to-cart').click(function(){
+    $(document).ready(function () {
+        $('.add-to-cart').click(function () {
             var id = $(this).attr("data-id");
-            $.post("/cart/addAjax/" + id, {}, function(data){
-                $('#cart-count').html('('+data+')');
+            $.post("/cart/addAjax/" + id, {}, function (data) {
+                $('#cart-count').html('(' + data + ')');
             });
             return false;
         });

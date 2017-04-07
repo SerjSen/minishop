@@ -22,7 +22,7 @@ class Cart
 
         // Если товар есть в корзине, но был добавлен еще раз, увеличим количество
         if (array_key_exists($id, $productsInCart)) {
-            $productsInCart[$id] ++;
+            $productsInCart[$id]++;
         } else {
             // Добавляем нового товара в корзину
             $productsInCart[$id] = 1;
@@ -41,6 +41,7 @@ class Cart
     {
         if (isset($_SESSION['products'])) {
             $count = 0;
+
             foreach ($_SESSION['products'] as $id => $quantity) {
                 $count = $count + $quantity;
             }
@@ -73,16 +74,27 @@ class Cart
         return $total;
     }
 
-    public static function clear(){
-        if(isset($_SESSION['products'])){
+    public static function clear()
+    {
+        if (isset($_SESSION['products'])) {
             unset($_SESSION['products']);
         }
     }
 
-    public static function deleteProduct($id){
+    public static function deleteProduct($id)
+    {
+
 
         $productsInCart = self::getProducts();
-        unset($productsInCart[$id]);
+        $qty = $productsInCart[$id];
+
+        if ($qty > 0) {
+            $qty = $qty - 1;
+            $productsInCart[$id] = $qty;
+        }else {
+            unset($productsInCart[$id]);
+        }
+
 
         $_SESSION['products'] = $productsInCart;
     }

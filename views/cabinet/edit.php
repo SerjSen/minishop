@@ -9,7 +9,7 @@
                     <?php if ($result): ?>
                         <div class="alert alert-success alert-dismissable fade in">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                            <?= ' Данные успешно изменены !'?>
+                            <?= ' Данные успешно изменены !' ?>
                         </div>                    <?php else: ?>
                         <?php if (isset($errors) && is_array($errors)): ?>
                             <div class="alert alert-danger alert-dismissable fade in">
@@ -29,9 +29,10 @@
                                 <input type="text" name="name" placeholder="Имя" value="<?php echo $name; ?>"/>
 
                                 <p>Пароль:</p>
-                                <input type="password" name="password" placeholder="Пароль" value="<?php echo $password; ?>"/>
+                                <input type="password" name="password" placeholder="Пароль"
+                                       value="<?php echo $password; ?>"/>
                                 <br/>
-                                <input type="submit" name="submit" class="btn btn-default" value="Сохранить" />
+                                <input type="submit" name="submit" class="btn btn-default" value="Сохранить"/>
                             </form>
                         </div><!--/sign up form-->
 

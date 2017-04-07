@@ -32,7 +32,12 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="template/<?php echo $product['image']; ?>" alt=""/>
+                                        <?php if (isset($product['image'])): ?>
+                                            <img src="template/<?php echo $product['image']; ?>" alt=""/>
+                                        <?php else: ?>
+                                            <img src="<?php echo Product::getImage($product['id']); ?>"/>
+
+                                        <?php endif ?>
                                         <h2>$<?php echo $product['price']; ?></h2>
                                         <p>
                                             <a href="/product/<?php echo $product['id']; ?>">
@@ -62,11 +67,18 @@
                             <div class="single-products">
                                 <div class="productinfo text-center">
                                     <div id="s1">
-                                        <?php foreach ($recomendedProducts as $product) {?>
+                                        <?php foreach ($recomendedProducts as $product) : ?>
                                             <div class="item">
-                                                <img src="<?php echo Product::getImage($product['id']);?>"/>
-                                                <h2>$<?php echo $product['price'];?></h2>
-                                                <a href="<?php echo $product['id'];?>"><?php echo $product['name'];?></a>
+                                                <?php if (isset($product['image'])): ?>
+                                                    <img src="template/<?php echo $product['image']; ?>" alt=""/>
+                                                <?php else: ?>
+                                                    <img src="<?php echo Product::getImage($product['id']); ?>"/>
+
+                                                <?php endif ?>
+                                                <h2>$<?php echo $product['price']; ?></h2>
+                                                <a href="/product/<?php echo $product['id']; ?>">
+                                                    <?php echo $product['name']; ?>
+                                                </a>
                                                 <br/>
                                                 <br/>
                                                 <a href="#" class="btn btn-default add-to-cart"
@@ -77,7 +89,7 @@
                                                 <?php endif; ?>
                                             </div>
 
-                                        <?php }?>
+                                        <?php endforeach; ?>
                                     </div>
 
                                     <br>
@@ -97,10 +109,10 @@
                             </div>
                         </div>
                     </div>
-            </div><!--/recommended_items-->
+                </div><!--/recommended_items-->
 
+            </div>
         </div>
-    </div>
 
 </section>
 <?php include(ROOT . '/views/layouts/footer.php') ?>

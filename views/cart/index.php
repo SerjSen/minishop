@@ -11,8 +11,8 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a href="/category/<?php echo $categoryItem['id'];?>">
-                                                <?php echo $categoryItem['name'];?>
+                                            <a href="/category/<?php echo $categoryItem['id']; ?>">
+                                                <?php echo $categoryItem['name']; ?>
                                             </a>
                                         </h4>
                                     </div>
@@ -38,16 +38,17 @@
                                 </tr>
                                 <?php foreach ($products as $product): ?>
                                     <tr>
-                                        <td><?php echo $product['code'];?></td>
+                                        <td><?php echo $product['code']; ?></td>
                                         <td>
-                                            <a href="/product/<?php echo $product['id'];?>">
-                                                <?php echo $product['name'];?>
+                                            <a href="/product/<?php echo $product['id']; ?>">
+                                                <?php echo $product['name']; ?>
                                             </a>
                                         </td>
-                                        <td><?php echo $product['price'];?></td>
-                                        <td><?php echo $productsInCart[$product['id']];?></td>
+                                        <td><?php echo $product['price']; ?></td>
+                                        <td><?php echo $productsInCart[$product['id']]; ?></td>
                                         <td>
-                                            <a class="btn btn-default checkout" href="/cart/delete/<?php echo $product['id'];?>">
+                                            <a class="btn btn-default checkout"
+                                               href="/cart/delete/<?php echo $product['id']; ?>">
                                                 <i class="fa fa-times"></i>
                                             </a>
                                         </td>
@@ -55,20 +56,21 @@
                                 <?php endforeach; ?>
                                 <tr>
                                     <td colspan="4">Общая стоимость, грн:</td>
-                                    <td><?php echo $totalPrice;?></td>
+                                    <td><?php echo $totalPrice; ?></td>
                                 </tr>
 
                             </table>
 
-                            <a class="btn btn-default checkout" href="/cart/checkout"><i class="fa fa-shopping-cart"></i> Оформить заказ</a>
+                            <a class="btn btn-default checkout" href="/cart/checkout"><i
+                                        class="fa fa-shopping-cart"></i> Оформить заказ</a>
                         <?php else: ?>
                             <p>Корзина пуста</p>
 
-                            <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к покупкам</a>
+                            <a class="btn btn-default checkout" href="/"><i class="fa fa-shopping-cart"></i> Вернуться к
+                                покупкам</a>
                         <?php endif; ?>
 
                     </div>
-
 
 
                 </div>

@@ -33,7 +33,8 @@
 
                         <?php else: ?>
 
-                            <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?></p><br/>
+                            <p>Выбрано товаров: <?php echo $totalQuantity; ?>, на сумму: <?php echo $totalPrice; ?></p>
+                            <br/>
 
                             <div class="col-sm-4">
                                 <?php if (isset($errors) && is_array($errors)): ?>
@@ -50,17 +51,20 @@
                                     <form action="#" method="post">
 
                                         <p>Ваша имя</p>
-                                        <input type="text" name="userName" placeholder="" value="<?php echo $userName; ?>"/>
+                                        <input type="text" name="userName" placeholder=""
+                                               value="<?php echo $userName; ?>"/>
 
                                         <p>Номер телефона</p>
-                                        <input type="text" name="userPhone" placeholder="" value="<?php echo $userPhone; ?>"/>
+                                        <input type="text" name="userPhone" placeholder=""
+                                               value="<?php echo $userPhone; ?>"/>
 
                                         <p>Комментарий к заказу</p>
-                                        <input type="text" name="userComment" placeholder="Сообщение" value="<?php echo $userComment; ?>"/>
+                                        <input type="text" name="userComment" placeholder="Сообщение"
+                                               value="<?php echo $userComment; ?>"/>
 
                                         <br/>
                                         <br/>
-                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить" />
+                                        <input type="submit" name="submit" class="btn btn-default" value="Оформить"/>
                                     </form>
                                 </div>
                             </div>

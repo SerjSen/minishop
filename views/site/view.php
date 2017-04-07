@@ -16,7 +16,9 @@
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a href="/category/<?= $category['id'] ?>"
-                                           class="<?php if ($categoryId == $category['id']) echo 'active';?>" >
+                                           class="<?php if ($categoryId == $category['id']) {
+                                               echo 'active';
+                                           } ?>">
                                             <?= $category['name'] ?>
                                         </a>
                                     </h4>
@@ -36,9 +38,13 @@
             <div class="col-sm-9 padding-right">
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
-                        <div class="view-product">
-                            <img src="/template/<?= $product['image']?> " alt=""/>
-                            <h3>ZOOM</h3>
+                        <div class="views-product">
+                            <?php if (isset($product['image'])): ?>
+                                <img src="template/<?php echo $product['image']; ?>" alt=""/>
+                            <?php else: ?>
+                                <img src="<?php echo Product::getImage($product['id']); ?>"/>
+
+                            <?php endif ?>
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
 
@@ -75,13 +81,13 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="/template/images/product-details/new.jpg" class="newarrival" alt=""/>
-                            <h2><?= $product['name'];?> </h2>
+                            <h2><?= $product['name']; ?> </h2>
                             <img src="/template/images/product-details/rating.png" alt=""/>
                             <span>
-									<span><?= $product['price'];?> </span>
+									<span><?= $product['price']; ?> </span>
 									<label>Quantity:</label>
 									<input type="text" value="3"/>
-									<a href="#" data-id="<?= $product['id'] ?>"class="btn btn-default add-to-cart"><i
+									<a href="#" data-id="<?= $product['id'] ?>" class="btn btn-default add-to-cart"><i
                                                 class="fa fa-shopping-cart"></i>В корзину</a>
 								</span>
                             <p><b>Availability:</b> In Stock</p>
@@ -92,9 +98,6 @@
                         </div><!--/product-information-->
                     </div>
                 </div><!--/product-details-->
-
-
-
 
 
             </div>

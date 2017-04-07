@@ -6,19 +6,22 @@
  * Date: 29.05.16
  * Time: 15:22
  */
-class CabinetController {
-    public function actionIndex(){
+class CabinetController
+{
+    public function actionIndex()
+    {
 
         $userId = User::checkLogged();
 
         $user = User::getUserById($userId);
-       /* $user = User::getUserById($userId);*/
+        /* $user = User::getUserById($userId);*/
 
-        require_once (ROOT.'/views/cabinet/index.php');
+        require_once(ROOT . '/views/cabinet/index.php');
         return true;
     }
 
-    public function actionEdit(){
+    public function actionEdit()
+    {
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
 
@@ -43,12 +46,12 @@ class CabinetController {
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
-            if( $errors  == false){
-            $result = User::edit($userId, $name, $password);
+            if ($errors == false) {
+                $result = User::edit($userId, $name, $password);
             }
         }
 
-        require_once (ROOT.'/views/cabinet/edit.php');
+        require_once(ROOT . '/views/cabinet/edit.php');
         return true;
     }
 }

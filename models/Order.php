@@ -9,8 +9,7 @@ class Order
 
         $db = DB::getConnection();
 
-        $sql = 'INSERT INTO product_order (user_name, user_phone, user_comment, user_id, products) '
-            . 'VALUES (:user_name, :user_phone, :user_comment, :user_id, :products)';
+        $sql = 'INSERT INTO product_order (user_name, user_phone, user_comment, user_id, products) ' . 'VALUES (:user_name, :user_phone, :user_comment, :user_id, :products)';
 
         $result = $db->prepare($sql);
         $result->bindParam(':user_name', $userName, PDO::PARAM_STR);
@@ -126,6 +125,7 @@ class Order
         $result->bindParam(':status', $status, PDO::PARAM_INT);
         return $result->execute();
     }
+
     /**
      * Возвращает текстое пояснение статуса для заказа :<br/>
      * <i>1 - Новый заказ, 2 - В обработке, 3 - Доставляется, 4 - Закрыт</i>
