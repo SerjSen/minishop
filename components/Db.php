@@ -10,7 +10,7 @@ class Db
 {
     public static function getConnection()
     {
-        $paramsPath = ROOT . '/config/config.php';
+        $paramsPath = ROOT . '/config/db.php';
         $params = include($paramsPath);
         $opt = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

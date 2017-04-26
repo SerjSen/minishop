@@ -1,9 +1,4 @@
 <?php
-
-return [
-    'host' => 'localhost',
-    'dbname' => 'my_shop',
-    'user' => 'root',
-    'password' => '12345',
-
-];
+// установка режима
+define("DEBUG", 1);
+define("PROD", 0);

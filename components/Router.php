@@ -42,20 +42,16 @@ class Router
 
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php';
 
-                if (file_exists($controllerFile)) {
+                if (file_exists($controllerFile) && method_exists($controllerName, $actionName)) {
                     include_once($controllerFile);
+                    //создать объект запустить action
+                    $controllerObject = new $controllerName;
+                    $result = call_user_func_array([$controllerObject, $actionName], $parameters);
+                }else {
+                    echo 'NotFoundException 404';
+                    die();
                 }
-
-                //создать объект запустить action
-                $controllerObject = new $controllerName;
-
-
-                $result = call_user_func_array([$controllerObject, $actionName], $parameters);
-
-                if (null !=$result) {
-                    break;
                 }
             }
         }
-    }
 }
